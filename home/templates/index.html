@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hyy Django this is html page </h1>
+    <a href="/contact/">
+        Contact
+    </a>
+    ||
+    <a href="/about/">
+        About
+    </a>
+
+    <table>
+
+        <tr>
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Can Vote</th>
+        </tr>
+
+        {% for peoples in people %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{peoples.name}}</td>
+            <td>{{peoples.age}}</td>
+            <td>
+                {% if peoples.age >= 18 %}
+                👍🏻
+
+                {%else%}
+                👎🏻
+                {%endif%}
+
+
+            </td>
+
+
+        </tr>
+
+        {% endfor %}
+
+
+    </table>
+    <p>
+        {% if "cucumber" in vegetable %}
+        Available
+
+        {%else%}
+        Not Available
+        {%endif%}
+    </p>
+
+</body>
+
+</html>
